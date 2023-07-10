@@ -1,0 +1,67 @@
+﻿@model OnlineCommercialAutomation.Models.Classes.SalesTransaction
+@{
+    ViewBag.Title = "NewSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@ViewBag.pr1
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title"> Yeni Satış Ekle</h3>
+                </div>
+
+
+                <form method="post">
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Products)
+                            <input type="text" name="ProductId" value="@ViewBag.pr1" class="form-control" />
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Currents)
+                            @Html.DropDownListFor(x => x.CurrentId, (List<SelectListItem>)ViewBag.pr3, new { @class = "form-control" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Personals)
+                            @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.np, new { @class = "form-control" })
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label> Fiyat </label>
+                            <input type="text" class="form-control" placeholder="Fiyat" name="Price" value="@ViewBag.pr2">
+                        </div>
+                        <div class="form-group">
+                            <label> Birim </label>
+                            <input type="text" class="form-control" placeholder="Birim" name="Piece">
+                        </div>
+                        <div class="form-group">
+                            <label>Toplam Fiyat</label>
+                            <input type="text" class="form-control" placeholder="Toplam Fiyat" name="TotalPrice">
+                        </div>
+                        <div class="form-group">
+                            <label>Toplam Fiyat</label>
+                            <input type="date" class="form-control" placeholder="Date" name="Date">
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

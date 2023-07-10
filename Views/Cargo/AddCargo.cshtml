@@ -1,0 +1,59 @@
+﻿@model OnlineCommercialAutomation.Models.Classes.Cargo
+@{
+    ViewBag.Title = "AddCargo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title"> Kargo Ekle</h3>
+                </div>
+
+
+                <form method="post">
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <input type="text" class="form-control" placeholder="Açıklama" name="Description">
+                        </div>
+                        <div class="form-group">
+                            <label>Takip Kodu</label>
+                            <input type="text"  value="@ViewBag.takipkod"class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Personel Adı</label>
+                            <input type="text" class="form-control" placeholder="Personel Adı" name="Personal">
+                        </div>
+                        <div class="form-group">
+                            <label>TEslim Alan  Adı</label>
+                            <input type="text" class="form-control" placeholder="Teslim Alan Adı" name="Delivery">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tarih</label>
+                            <input type="date" class="form-control" placeholder="Tarih" name="Date">
+                        </div>
+
+                        <div class="form-group">
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>

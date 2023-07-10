@@ -1,0 +1,41 @@
+﻿@using OnlineCommercialAutomation.Models.Classes
+@model List<Personal>
+
+
+
+
+@{
+    ViewBag.Title = "PersonelDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Id</th>
+        <th>Personel Adı</th>
+        <th> Personel Soyadı</th>
+        <th>Personel Resmi</th>
+        <th>Satışlar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td> @item.PersonelId</td>
+            <td>@item.PersonelName</td>
+            <td>@item.PersonalSurname</td>
+            <td>@item.PersonelImage</td>
+            
+
+            <td>
+
+                <a href="/Department/PersonelSellingDetail/@item.PersonelId" class="btn btn-danger btn-xs">Satışlar </a>
+             
+
+            </td>
+        </tr>
+    }
+</table>
+
+
+

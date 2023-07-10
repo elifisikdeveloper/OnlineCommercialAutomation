@@ -1,0 +1,55 @@
+﻿@using OnlineCommercialAutomation.Models.Classes
+@model List<Cargo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br/>
+@using (Html.BeginForm("Index", "Cargo", FormMethod.Get))
+    {<p>
+        Kargo Takip Numarası:@Html.TextBox("p")
+        <input type="submit" value=" Ara"/>
+        
+        </p>}
+    
+
+
+
+
+
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Personel</th>
+        <th>Kargo Takip Numarası</th>
+        <th>Alıcı</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Personal</td>
+            <td>@k.TrackingCode</td>
+            <td>@k.Delivery</td>
+            <td>@k.Date</td>
+            <td><a href="/Cargo/CargoTracking/@k.TrackingCode"  class="btn btn-success"> Detaylar</a></td>
+
+
+
+
+        </tr>
+
+
+
+        }
+
+
+
+
+
+
+</table>
+<a  href="Cargo/AddCargo" class="btn btn-primary"> Yeni Kargo Ekle</a>
+

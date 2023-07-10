@@ -1,0 +1,47 @@
+﻿@using OnlineCommercialAutomation.Models.Classes
+@model List<SalesTransaction>
+@{
+    ViewBag.Title = "CurrentSellingDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    decimal toplam = 0;
+}
+
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Id</th>
+        <th> Ürün İsmi</th>
+        <th> Personel İsmi</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Yazdır</th>
+
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        toplam = @item.Piece * item.Price;
+        <tr>
+
+            <td> @item.SalesTransactionId</td>
+            <td>@item.ProductId</td>
+            <td>@item.Personals.PersonelName</td>
+            <td>@item.Price</td>
+            <td>@item.Piece</td>
+            <td>@toplam</td>
+            <td>@item.Date</td>
+
+            <td>
+
+                <a href="/Department/DeleteDepartment/" class="btn btn-danger btn-xs">Yazdır </a>
+
+            </td>
+        </tr>
+    }
+</table>
+
+

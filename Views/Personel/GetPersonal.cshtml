@@ -1,0 +1,69 @@
+﻿@model  OnlineCommercialAutomation.Models.Classes.Personal
+@{
+    ViewBag.Title = "GetPersonal";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="card card-warning">
+                <div class="card-header">
+                    <h3 class="card-title"> Personel Güncelle</h3>s
+                </div>
+
+                @using (Html.BeginForm("UpdatePersonal", "Personel", FormMethod.Post))
+                {
+
+                    <div class="card-body">
+                        <div class="form-group">
+
+
+                            <label> Personel Adı</label>
+                            @Html.TextBoxFor(x => x.PersonelName)
+                            @Html.HiddenFor(x => x.PersonelId)
+
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <label> Personel Soyadı</label>
+                            @Html.TextBoxFor(x => x.PersonalSurname)
+
+
+                        </div>
+                        <div class="form-group">
+                            <label> Personel Görsel</label>
+                            <input type="file" name="PersonelImage" />
+                        </div>
+                        <div class="form-group">
+
+
+                            <label> Departman Adı</label>
+                            @Html.TextBoxFor(x => x.DepartmentId)
+
+
+                        </div>
+
+
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Güncelle</button>
+                        </div>
+
+
+                    </div>
+
+
+                }
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

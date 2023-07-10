@@ -1,0 +1,117 @@
+﻿@using OnlineCommercialAutomation.Models.Classes
+@model List<Invoice>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    
+
+}
+
+<table class="table table-bordered" style="margin-top:20px" id="tbl1">
+    <thead>
+        <title>Bootstrap 4 Responsive Datatable and Export to PDF, CSV</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.bootstrap4.min.css">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+
+        <tr>
+            <th>ID</th>
+            <th>Seri No</th>
+            <th>Sıra No</th>
+            <th> Vergi Dairesi</th>
+            <th>Saat</th>
+            <th>Teslim Eden</th>
+            <th>Teslim Alan</th>
+            <th>Toplam Tutar</th>
+            <th>Detaylar</th>
+  
+        </tr>
+
+
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.InvoiceId</td>
+                <td>@item.InvoiceSerialNo</td>
+                <td>@item.InvoiceRotationNo</td>
+                <td>@item.TaxOffice</td>
+                <td>@item.Time</td>
+                <td>@item.Deliverer</td>
+                <td>@item.Recipient</td>
+                <td>@item.TotalPrice</td>
+                <td>
+                    <a href="/Invoice/InvoiceItem/@item.InvoiceId" class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i> </a>
+                    <a href="/Invoice/GetInvoice/@item.InvoiceId" class="btn btn-warning btn-xs"><i class="fa fa-pen"></i> </a>
+                </td>
+
+
+            </tr>
+
+        }
+
+
+
+
+
+
+          
+
+        </tbody>
+
+</table>
+<a href="/Category/AddCategory" class="btn btn-primary"> Yeni Kategori Ekle</a>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.bootstrap4.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
+
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
+
+<script>
+
+
+    $('#tbl1').DataTable({
+        buttons: [
+            {
+                extend: 'pdf',
+                text: 'Save current page',
+                exportOptions: {
+                    modifier: {
+                        page: 'current'
+                    }
+                }
+            }
+        ]
+    });
+
+</script>
+

@@ -1,0 +1,103 @@
+﻿@model OnlineCommercialAutomation.Models.Classes.Invoice
+@{
+    ViewBag.Title = "GetInvoice";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="card card-warning">
+                <div class="card-header">
+                    <h3 class="card-title"> Fatura Güncelle</h3>
+                </div>
+
+                @using (Html.BeginForm("UpdateInvoice", "Invoice", FormMethod.Post))
+                {
+
+                    <div class="card-body">
+                        <div class="form-group">
+
+
+                            <label> Seri No</label>
+                            @Html.TextBoxFor(x => x.InvoiceSerialNo)
+                            @Html.HiddenFor(x => x.InvoiceId)
+
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <label> Sıra No</label>
+                            @Html.TextBoxFor(x => x.InvoiceRotationNo)
+
+
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <label> Vergi Daireai</label>
+                            @Html.TextBoxFor(x => x.TaxOffice)
+
+
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <label> Teslim Alan</label>
+                            @Html.TextBoxFor(x => x.Deliverer)
+
+
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <label> Teslim Eden</label>
+                            @Html.TextBoxFor(x => x.Recipient)
+
+
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <label> Tarih</label>
+                            @Html.TextBoxFor(x => x.Time)
+
+
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <label> Toplam Tutar</label>
+                            @Html.TextBoxFor(x => x.TotalPrice)
+
+
+
+                        </div>
+                      
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Güncelle</button>
+                        </div>
+
+
+                    </div>
+
+
+                }
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,79 @@
+﻿@model OnlineCommercialAutomation.Models.Classes.SalesTransaction
+
+@{
+    ViewBag.Title = "GetS";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid">
+<div class="row">
+
+    <div class="col-md-6">
+
+        <div class="card card-warning">
+            <div class="card-header">
+                <h3 class="card-title"> Update Category</h3>
+            </div>
+
+            @using (Html.BeginForm("UpdateSales", "SalesTransaction", FormMethod.Post))
+            {
+                <div class="card-body">
+                    <div class="form-group">
+                        @Html.LabelFor(x=>x.Price)
+                        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                        @Html.HiddenFor(x => x.SalesTransactionId)
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Piece)
+                        @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.TotalPrice)
+                        @Html.TextBoxFor(x => x.TotalPrice, new { @class = "form-control" })
+
+                    </div>
+                    <div class="form-group">
+                        <label>Sale Price</label>
+
+                        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Products)
+                        @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.dg1, new { @class = "form-control" })
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Currents)
+                        @Html.DropDownListFor(x => x.CurrentId, (List<SelectListItem>)ViewBag.dg2, new { @class = "form-control" })
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Personals)
+                        @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.dg3, new { @class = "form-control" })
+
+                    </div>
+
+
+                    <div class="card-footer">
+                        <button class="btn btn-primary">Güncelle</button>
+                    </div>
+
+
+                </div>
+
+
+
+            }
+
+
+        </div>
+    </div>
+
+</div>
+
+</div>

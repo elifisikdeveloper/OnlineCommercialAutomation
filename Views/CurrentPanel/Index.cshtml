@@ -1,0 +1,48 @@
+﻿@model OnlineCommercialAutomation.Models.Classes.Current
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+<h2>Index</h2>
+<br/>
+<h2> Cari Bilgi Paneli</h2>
+@using (Html.BeginForm("Index", "CurrentPanel", FormMethod.Post))
+{
+<table class="table table-hover">
+    <tr>
+
+
+
+        <td>
+
+            <label>Mail Adresi:@HttpContext.Current.User.Identity.Name</label>
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.CjurrentCity, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.CurrentPassword, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })</td>
+    </tr>
+</table>
+      
+    <button class="btn btn-warning"> Bilgilerimi Güncelle</button>
+
+
+}
+
+
+

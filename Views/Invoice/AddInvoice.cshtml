@@ -1,0 +1,76 @@
+﻿@model OnlineCommercialAutomation .Models.Classes.Invoice
+@{
+    ViewBag.Title = "AddInvoice";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title"> Fatura Ekle</h3>
+                </div>
+
+
+                <form method="post">
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            <label>Seri No</label>
+                            <input type="text" class="form-control" placeholder="Seri No" name="InvoiceSerialNo">
+                        </div>
+                        <div class="form-group">
+                            <label>Sıra No</label>
+                            <input type="text" class="form-control" placeholder="Sıra No" name="InvoiceRotationNo">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tarih</label>
+                            <input type="date" class="form-control" placeholder="Tarih" name="Date">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Saat</label>
+                            <input type="time" class="form-control" placeholder="Saat" name="Time">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Vergi Dairesi </label>
+                            <input type="text" class="form-control" placeholder=" Vergi Dairesi" name="TaxOffice">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Teslim Eden</label>
+                            <input type="text" class="form-control" placeholder="Teslim Eden" name="Deliverer">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Teslim Alan</label>
+                            <input type="text" class="form-control" placeholder="Teslim Alan" name="Recipient">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Toplam Tutae</label>
+                            <input type="text" class="form-control" placeholder="Toplam Tutar" name="TotalPrice">
+                        </div>
+
+
+                        <div class="form-group">
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>

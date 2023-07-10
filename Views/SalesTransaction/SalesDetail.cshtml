@@ -1,0 +1,43 @@
+﻿@using OnlineCommercialAutomation.Models.Classes
+@model List<SalesTransaction>
+
+
+@{
+    ViewBag.Title = "SalesDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Id</th>
+        <th> Ürün Adı</th>
+        <th> Personel Adı</th>
+        <th> Cari Adı </th>
+        <th> Adet </th>
+        <th>  Fiyat</th>
+        <th>  Toplam</th>
+        <th>  Tarih</th>
+        <th> Transactions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.SalesTransactionId</td>
+            <td>@item.Products.ProductName</td>
+            <td>@item.Currents.CurrentName</td>
+            <td> @item.Personals.PersonelName  </td>
+            <td>@item.Piece</td>
+            <td>@item.Price</td>
+            <td>@item.TotalPrice</td>
+            <td>@item.Date</td>
+
+
+
+            <td>
+                <a href="/SalesTransaction/GetS/@item.PersonelId" class="btn btn-warning btn-xs"><i class="fa fa-pen"></i> </a>
+            </td>
+        </tr>
+    }
+</table>
+<button class="btn btn-default" style="background-color:dodgerblue">Yazdır</button>

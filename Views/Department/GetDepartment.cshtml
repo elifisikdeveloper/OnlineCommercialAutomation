@@ -1,0 +1,47 @@
+﻿@model OnlineCommercialAutomation.Models.Classes.Department
+@{
+    ViewBag.Title = "GetDepartment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="card card-warning">
+                <div class="card-header">
+                    <h3 class="card-title"> Departman Güncelle</h3>
+                </div>
+
+                @using (Html.BeginForm("UpdateDepartment", "Department", FormMethod.Post))
+                {
+
+                    <div class="card-body">
+                        <div class="form-group">
+
+
+                            <label > Departman Adı</label>
+                            @Html.TextBoxFor(x => x.DepartmentName)
+                            @Html.HiddenFor(x => x.DepartmentId)
+
+
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Güncelle</button>
+                        </div>
+
+
+                    </div>
+
+
+                }
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
